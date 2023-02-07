@@ -73,13 +73,7 @@ h6 {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0.9) 0%,
-    rgba(255, 255, 255, 0) 30%,
-    rgba(255, 255, 255, 0) 75%,
-    rgba(0, 0, 0, 1) 90%
-  );
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.75) 0%, rgba(255, 255, 255, 0) 10%);
 }
 
 #hero video,
@@ -146,20 +140,53 @@ h6 {
   justify-content: center;
 }
 
+#gallery div {
+  position: relative;
+}
+
 #gallery img {
   object-fit: cover;
   width: 100%;
   height: 100%;
   transition: transform 0.4s;
+  aspect-ratio: 16 / 9;
+  position: relative;
 }
 
-#gallery img:hover {
+/* #gallery img:first-of-type:hover {
   transform: scale(1.025);
+} */
+
+#gallery .playSVG {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  fill: white;
+  color: white;
+  object-fit: contain;
+  height: 40%;
+  width: 30%;
+  transition: height 0.2s;
+  opacity: 0.75;
+}
+
+#gallery .playSVG:hover {
+  cursor: pointer;
+  height: 42.5%;
 }
 
 #gallery div {
   position: relative;
   overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+#gallery iframe {
+  aspect-ratio: 16/9;
+  width: 100%;
+  height: 100%;
 }
 
 #gallery .large {
@@ -170,14 +197,14 @@ h6 {
   position: absolute;
   bottom: 3.5rem;
   left: 2rem;
-  text-shadow: 0 0 1px #000;
+  text-shadow: 0 0 5px #000;
 }
 
 #gallery div .projectBrand {
   position: absolute;
   bottom: 2rem;
   left: 2rem;
-  text-shadow: 0 0 1px #000;
+  text-shadow: 0 0 2px #000;
 }
 
 /* Footer */
@@ -218,10 +245,6 @@ footer {
 }
 
 @media only screen and (min-width: 666px) {
-  #gallery div {
-    max-width: 50%;
-  }
-
   #hero header {
     width: 100%;
     max-width: min(1200px, 90%);
@@ -237,10 +260,18 @@ footer {
     gap: 1rem;
     margin-top: 0;
   }
+
+  #gallery > div {
+    max-width: 50%;
+  }
 }
 
 @media only screen and (min-width: 1200px) {
-  #gallery div {
+  #hero {
+    height: 950px;
+  }
+
+  #gallery > div {
     max-width: 33%;
     /* max-height: 450px; */
   }
