@@ -10,7 +10,11 @@
 
   <body>
     <div id="hero">
-      <video src="./img/heroCropped.webm" autoplay muted loop></video>
+      <video autoplay muted loop>
+        <source src="./videos/heroCropped.hevc" type="video/mp4; codecs=hevc" />
+        <source src="./videos/heroCropped.webm" type="video/webm; codecs=vp9,opus" />
+        <source src="./videos/heroCropped.mp4" type="video/mp4" />
+      </video>
       <div class="overlay"></div>
       <header>
         <a href="#" id="logo">BASILE MINSTER | Role</a>
