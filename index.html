@@ -11,26 +11,30 @@
 
   <body>
     <div id="hero">
-      <video autoplay muted loop>
+      <video autoplay muted loop inline>
         <source src="./videos/heroCropped.hevc" type="video/mp4; codecs=hevc" />
         <source src="./videos/heroCropped.webm" type="video/webm; codecs=vp9,opus" />
         <source src="./videos/heroCropped.mp4" type="video/mp4" />
       </video>
       <div class="overlay"></div>
       <header>
-        <a href="#" id="logo">BASILE MINSTER | Partenaire Audiovisuel</a>
+        <a href="./index.html" id="logo">
+          <p>BASILE MINSTER</p>
+          <span>|</span>
+          <p>Partenaire Audiovisuel</p>
+        </a>
         <div class="links">
           <ul>
             <li>
-              <a href="#">Photographie</a>
+              <a href="./photography.html">Photographie</a>
             </li>
-            <li><a href="#">Shorts</a></li>
+            <li><a href="./shorts.html">Shorts</a></li>
             <li><a href="#">Art</a></li>
             <li><a href="./about.html">À propos</a></li>
           </ul>
         </div>
       </header>
-      <a href="#gallery" class="down">
+      <a href="#photography" class="down">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
           <path
             d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"
@@ -39,74 +43,95 @@
       </a>
     </div>
 
-    <div id="gallery">
-      <!-- Video projects -->
-      <div class="player" data-plyr-provider="vimeo" data-plyr-embed-id="358589429"></div>
-      <div class="player" data-plyr-provider="vimeo" data-plyr-embed-id="438928242"></div>
-      <div class="player" data-plyr-provider="vimeo" data-plyr-embed-id="562831822"></div>
-      <div class="player" data-plyr-provider="youtube" data-plyr-embed-id="TNj8CTzZ930"></div>
-      <div class="player" data-plyr-provider="youtube" data-plyr-embed-id="N-5UWwuwyj0"></div>
-      <div class="player" data-plyr-provider="youtube" data-plyr-embed-id="YC0mKiASfSM"></div>
-      <!-- Photographies -->
-      <div>
-        <img src="./img/page photo/photographietranskei.webp" alt="" loading="lazy" />
-        <h3 class="projectName">Nom du projet</h3>
-        <h4 class="projectBrand">Marque</h4>
+    <div id="photography">
+      <a href="./photography.html">
+        <h1>Photographie</h1>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+          <path
+            d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"
+          />
+        </svg>
+      </a>
+      <div class="photoGallery">
+        <div>
+          <img src="./img/page photo/photographietranskei.webp" alt="" loading="lazy" />
+          <h3 class="projectName">Nom du projet</h3>
+          <h4 class="projectBrand">Marque</h4>
+        </div>
+        <div class="large">
+          <img src="./img/page photo/photographietranskei.webp" alt="" loading="lazy" />
+          <h3 class="projectName">Nom du projet</h3>
+          <h4 class="projectBrand">Marque</h4>
+        </div>
+        <div class="large">
+          <img src="./img/page photo/photographietranskei.webp" alt="" loading="lazy" />
+          <h3 class="projectName">Nom du projet</h3>
+          <h4 class="projectBrand">Marque</h4>
+        </div>
+        <div class="large">
+          <img src="./img/page photo/photographietranskei.webp" alt="" loading="lazy" />
+          <h3 class="projectName">Nom du projet</h3>
+          <h4 class="projectBrand">Marque</h4>
+        </div>
+        <div>
+          <img src="./img/page photo/astrophoto 2.webp" alt="" loading="lazy" />
+          <h3 class="projectName">Nom du projet</h3>
+          <h4 class="projectBrand">Marque</h4>
+        </div>
+        <div>
+          <img src="./img/page photo/canada inspiration.webp" alt="" loading="lazy" />
+          <h3 class="projectName">Nom du projet</h3>
+          <h4 class="projectBrand">Marque</h4>
+        </div>
+        <div>
+          <img src="./img/page photo/inspiratino 2.webp" alt="" loading="lazy" />
+          <h3 class="projectName">Nom du projet</h3>
+          <h4 class="projectBrand">Marque</h4>
+        </div>
+        <div>
+          <img src="./img/page photo/nature.webp" alt="" loading="lazy" />
+          <h3 class="projectName">Nom du projet</h3>
+          <h4 class="projectBrand">Marque</h4>
+        </div>
+        <div>
+          <img src="./img/page photo/photographie.webp" alt="" loading="lazy" />
+          <h3 class="projectName">Nom du projet</h3>
+          <h4 class="projectBrand">Marque</h4>
+        </div>
+        <div class="large">
+          <img src="./img/page photo/photographie.webp" alt="" loading="lazy" />
+          <h3 class="projectName">Nom du projet</h3>
+          <h4 class="projectBrand">Marque</h4>
+        </div>
+        <div class="large">
+          <img src="./img/page photo/photographie.webp" alt="" loading="lazy" />
+          <h3 class="projectName">Nom du projet</h3>
+          <h4 class="projectBrand">Marque</h4>
+        </div>
+        <div class="large">
+          <img src="./img/page photo/photographie.webp" alt="" loading="lazy" />
+          <h3 class="projectName">Nom du projet</h3>
+          <h4 class="projectBrand">Marque</h4>
+        </div>
       </div>
-      <div class="large">
-        <img src="./img/page photo/photographietranskei.webp" alt="" loading="lazy" />
-        <h3 class="projectName">Nom du projet</h3>
-        <h4 class="projectBrand">Marque</h4>
-      </div>
-      <div class="large">
-        <img src="./img/page photo/photographietranskei.webp" alt="" loading="lazy" />
-        <h3 class="projectName">Nom du projet</h3>
-        <h4 class="projectBrand">Marque</h4>
-      </div>
-      <div class="large">
-        <img src="./img/page photo/photographietranskei.webp" alt="" loading="lazy" />
-        <h3 class="projectName">Nom du projet</h3>
-        <h4 class="projectBrand">Marque</h4>
-      </div>
-      <div>
-        <img src="./img/page photo/astrophoto 2.webp" alt="" loading="lazy" />
-        <h3 class="projectName">Nom du projet</h3>
-        <h4 class="projectBrand">Marque</h4>
-      </div>
-      <div>
-        <img src="./img/page photo/canada inspiration.webp" alt="" loading="lazy" />
-        <h3 class="projectName">Nom du projet</h3>
-        <h4 class="projectBrand">Marque</h4>
-      </div>
-      <div>
-        <img src="./img/page photo/inspiratino 2.webp" alt="" loading="lazy" />
-        <h3 class="projectName">Nom du projet</h3>
-        <h4 class="projectBrand">Marque</h4>
-      </div>
-      <div>
-        <img src="./img/page photo/nature.webp" alt="" loading="lazy" />
-        <h3 class="projectName">Nom du projet</h3>
-        <h4 class="projectBrand">Marque</h4>
-      </div>
-      <div>
-        <img src="./img/page photo/photographie.webp" alt="" loading="lazy" />
-        <h3 class="projectName">Nom du projet</h3>
-        <h4 class="projectBrand">Marque</h4>
-      </div>
-      <div class="large">
-        <img src="./img/page photo/photographie.webp" alt="" loading="lazy" />
-        <h3 class="projectName">Nom du projet</h3>
-        <h4 class="projectBrand">Marque</h4>
-      </div>
-      <div class="large">
-        <img src="./img/page photo/photographie.webp" alt="" loading="lazy" />
-        <h3 class="projectName">Nom du projet</h3>
-        <h4 class="projectBrand">Marque</h4>
-      </div>
-      <div class="large">
-        <img src="./img/page photo/photographie.webp" alt="" loading="lazy" />
-        <h3 class="projectName">Nom du projet</h3>
-        <h4 class="projectBrand">Marque</h4>
+    </div>
+
+    <div id="videos">
+      <a href="./#">
+        <h1>Projets Vidéos</h1>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+          <path
+            d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"
+          />
+        </svg>
+      </a>
+      <div class="videoGallery">
+        <div class="player" data-plyr-provider="vimeo" data-plyr-embed-id="358589429"></div>
+        <div class="player" data-plyr-provider="vimeo" data-plyr-embed-id="438928242"></div>
+        <div class="player" data-plyr-provider="vimeo" data-plyr-embed-id="562831822"></div>
+        <div class="player" data-plyr-provider="youtube" data-plyr-embed-id="TNj8CTzZ930"></div>
+        <div class="player" data-plyr-provider="youtube" data-plyr-embed-id="N-5UWwuwyj0"></div>
+        <div class="player" data-plyr-provider="youtube" data-plyr-embed-id="YC0mKiASfSM"></div>
       </div>
     </div>
 
@@ -119,8 +144,7 @@
     </a>
 
     <footer>
-      <p>Basile Minster | Role</p>
-      <p>&copy; Copyright 2023 - Tous droits réservés.</p>
+      <p>Basile Minster | Role &copy; Copyright 2023 - Tous droits réservés.</p>
       <a href="www.malloryberthome.com">
         Website créé par
         <b>Mallory Berthomé</b>

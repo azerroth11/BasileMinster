@@ -10,6 +10,7 @@
 
 :root {
   --plyr-color-main: rgba(255, 255, 255, 0.5);
+  --swiper-theme-color: #fff;
 }
 
 * {
@@ -23,6 +24,7 @@ html {
 }
 
 body {
+  min-height: 100vh;
   display: grid;
   place-items: center;
   margin: 0 auto;
@@ -102,8 +104,17 @@ h6 {
   padding: 2rem 1rem;
 }
 
+#hero header a {
+  display: grid;
+}
+
+#hero header a span {
+  display: none;
+}
+
 #hero .links {
   font-size: 1.25rem;
+  display: none;
 }
 
 #hero .links ul {
@@ -139,71 +150,156 @@ h6 {
   padding: 0.5rem;
 }
 
-.up {
-  bottom: 4%;
+/* Gallery */
+#photography,
+#videos {
+  margin-top: 6rem;
+  max-width: min(1440px, 100%);
+  width: 100%;
 }
 
-/* Gallery */
-#gallery {
+#photography a,
+#videos a {
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  margin-left: 1rem;
+}
+
+#photography h1,
+#videos h1 {
+  display: inline-block;
+}
+
+#photography a svg,
+#videos a svg {
+  fill: white;
+  transform: rotate(-90deg);
+  fill: white;
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.photoGallery,
+.videoGallery {
   margin: 2rem auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 1rem;
-  max-width: min(1920px, 100%);
 }
 
-#gallery > div {
-  position: relative;
-}
-
-#gallery img {
+.photoGallery img,
+.videoGallery > div {
   object-fit: cover;
   width: 100%;
   height: 100%;
   transition: transform 0.4s;
   aspect-ratio: 16 / 9;
-  position: relative;
 }
 
-#gallery img:first-of-type:hover {
+.photoGallery img:first-of-type:hover {
   transform: scale(1.025);
 }
 
-#gallery > div {
+.photoGallery > div,
+.videoGallery > div {
   position: relative;
   overflow: hidden;
   width: 100%;
   height: 100%;
 }
 
-#gallery > .plyr--paused .plyr__controls {
-  opacity: 0;
-}
-
-#gallery .large {
+.photoGallery .large {
   display: none;
 }
 
-#gallery div .projectName {
+.photoGallery > div .projectName {
   position: absolute;
   bottom: 3.5rem;
   left: 2rem;
   text-shadow: 0 0 5px #000;
 }
 
-#gallery div .projectBrand {
+.photoGallery > div .projectBrand {
   position: absolute;
   bottom: 2rem;
   left: 2rem;
   text-shadow: 0 0 2px #000;
 }
 
-/* Footer */
-footer {
-  display: grid;
-  place-items: center;
-  margin-top: 4rem;
+.videoGallery > .plyr--paused .plyr__controls {
+  opacity: 0;
+}
+
+/* Photography Page*/
+.photographyBody #hero {
+  height: 75vh;
+  overflow: hidden;
+}
+
+.photographyBody #hero .overlay {
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(255, 255, 255, 0) 35%,
+    rgba(0, 0, 0, 0) 65%,
+    rgba(0, 0, 0, 1) 90%
+  );
+}
+
+.photographyBody #hero img {
+  object-fit: contain;
+  margin: 0 auto;
+}
+
+/* Swiper */
+.swiper {
+  max-width: min(1200px, 100%);
+  height: 15vh;
+  position: relative;
+}
+
+.swiper .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.95) 0%,
+    rgba(255, 255, 255, 0) 20%,
+    rgba(0, 0, 0, 0) 80%,
+    rgba(0, 0, 0, 0.95) 100%
+  );
+  z-index: 2;
+  pointer-events: none;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.swiper-slide img:hover {
+  cursor: pointer;
+}
+
+.swiper-button-next {
+  stroke: black;
 }
 
 /* About Page */
@@ -228,10 +324,6 @@ footer {
   margin: 0 auto;
 }
 
-.test {
-  padding: 0 1rem;
-}
-
 #miniGallery {
   display: flex;
   flex-wrap: wrap;
@@ -246,6 +338,14 @@ footer {
   margin: 0 auto;
 }
 
+/* Footer */
+footer {
+  display: grid;
+  place-items: center;
+  margin-top: 4rem;
+  text-align: center;
+}
+
 @media only screen and (min-width: 666px) {
   #hero header {
     width: 100%;
@@ -257,24 +357,35 @@ footer {
     transform: translateX(-50%);
   }
 
+  #hero header a {
+    display: flex;
+  }
+
+  #hero header a span {
+    display: block;
+    margin: 0 0.5rem;
+  }
+
   #hero header .links ul {
     display: flex;
     gap: 1rem;
     margin-top: 0;
   }
 
-  #gallery > div {
+  .photoGallery > div,
+  .videoGallery > div {
     max-width: 50%;
   }
 }
 
 @media only screen and (min-width: 1200px) {
-  #hero {
-    height: 950px;
+  #hero header .links {
+    display: block;
   }
-
-  #gallery > div {
+  
+  .photoGallery > div,
+  .videoGallery > div {
     max-width: 450px;
-    /* max-height: 450px; */
+    max-height: 300px;
   }
 }
