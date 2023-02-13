@@ -10,14 +10,8 @@
   </head>
 
   <body>
-    <div id="hero">
-      <video autoplay muted loop inline>
-        <source src="./videos/heroCropped.hevc" type="video/mp4; codecs=hevc" />
-        <source src="./videos/heroCropped.webm" type="video/webm; codecs=vp9,opus" />
-        <source src="./videos/heroCropped.mp4" type="video/mp4" />
-      </video>
-      <div class="overlay"></div>
-      <header>
+    <header>
+      <div>
         <a href="./index.html" id="logo">
           <p>BASILE MINSTER</p>
           <span>|</span>
@@ -33,7 +27,16 @@
             <li><a href="./about.html">À propos</a></li>
           </ul>
         </div>
-      </header>
+      </div>
+    </header>
+
+    <div id="hero">
+      <video autoplay muted loop inline>
+        <source src="./videos/heroCropped.hevc" type="video/mp4; codecs=hevc" />
+        <source src="./videos/heroCropped.webm" type="video/webm; codecs=vp9,opus" />
+        <source src="./videos/heroCropped.mp4" type="video/mp4" />
+      </video>
+      <div class="overlay"></div>
       <a href="#photography" class="down">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
           <path
@@ -126,12 +129,46 @@
         </svg>
       </a>
       <div class="videoGallery">
-        <div class="player" data-plyr-provider="vimeo" data-plyr-embed-id="358589429"></div>
-        <div class="player" data-plyr-provider="vimeo" data-plyr-embed-id="438928242"></div>
-        <div class="player" data-plyr-provider="vimeo" data-plyr-embed-id="562831822"></div>
-        <div class="player" data-plyr-provider="youtube" data-plyr-embed-id="TNj8CTzZ930"></div>
-        <div class="player" data-plyr-provider="youtube" data-plyr-embed-id="N-5UWwuwyj0"></div>
-        <div class="player" data-plyr-provider="youtube" data-plyr-embed-id="YC0mKiASfSM"></div>
+        <div>
+          <div
+            class="player"
+            data-plyr-provider="vimeo"
+            data-plyr-embed-id="358589429"
+            data-poster="./img/thumbnails/StephanieLedoux.webp"
+          ></div>
+          <p>Réal: Basile Minster</p>
+        </div>
+        <div>
+          <div
+            class="player"
+            data-plyr-provider="vimeo"
+            data-plyr-embed-id="438928242"
+            data-poster="./img/thumbnails/MelanieJaneFrey.webp"
+          ></div>
+          <h3 class="projectName">Portraits d'artistes: Mélanie Jane Frey</h3>
+          <h4 class="projectBrand">Réalisateur</h4>
+        </div>
+        <div>
+          <div class="player" data-plyr-provider="vimeo" data-plyr-embed-id="562831822"></div>
+          <p>Prod: Collectif Saga & Frapadoc Production // Réal: Basile Minster</p>
+        </div>
+        <div>
+          <div class="player" data-plyr-provider="youtube" data-plyr-embed-id="TNj8CTzZ930"></div>
+          <p>Prod: Celebration Days Records // Réal: Basile Minster & Romain Hamoniaux</p>
+        </div>
+        <div>
+          <div
+            class="player"
+            data-plyr-provider="youtube"
+            data-plyr-embed-id="N-5UWwuwyj0"
+            data-poster="./img/thumbnails/YourSmile.webp"
+          ></div>
+          <p></p>
+        </div>
+        <div>
+          <div class="player" data-plyr-provider="youtube" data-plyr-embed-id="YC0mKiASfSM"></div>
+          <p>Prod: Label Maison // Réal: Mickael Titrent // Ass.réal: Basile Minster</p>
+        </div>
       </div>
     </div>
 
