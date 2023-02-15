@@ -5944,18 +5944,3 @@
   return Q.use(ce), Q
 })
 //# sourceMappingURL=swiper-bundle.min.js.map
-
-// Swiper
-const swiper = new Swiper('.swiper', {
-  slidesPerView: '3',
-  spaceBetween: 10,
-  // centeredSlides: true,
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
-})
-
-swiper.on('click', function (e) {
-  document.getElementsByClassName('largeDisplay')[0].src = e.clickedSlide.children[0].src
-})
