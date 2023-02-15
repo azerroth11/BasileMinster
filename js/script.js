@@ -53,7 +53,6 @@ function createGallery() {
         const swiper = new Swiper('.swiper', {
           slidesPerView: 'auto',
           centeredSlides: true,
-          centerInsufficientSlides: true,
           grabCursor: true,
           rewind: true,
           navigation: {
