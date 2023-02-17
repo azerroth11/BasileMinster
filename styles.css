@@ -229,6 +229,8 @@ header a {
   object-fit: cover;
   transition: transform 0.5s;
   width: 100%;
+  max-width: 17.5%;
+  margin: 0 auto;
 }
 
 #videos .videoGallery .suggestions img:hover {
@@ -407,7 +409,7 @@ footer {
   text-align: center;
 }
 
-@media only screen and (min-width: 666px) {
+@media only screen and (min-width: 768px) {
   header > div {
     display: flex;
     justify-content: space-between;
@@ -444,6 +446,10 @@ footer {
     flex-wrap: wrap;
     gap: 0.5rem;
     width: 22.5%;
+  }
+
+  #videos .videoGallery .suggestions img {
+    max-width: none;
   }
 }
 
