@@ -1,13 +1,3 @@
-function initPlyr() {
-  const players = Array.from(document.querySelectorAll('.player')).map((p) => {
-    new Plyr(p, {
-      controls: ['play-large', 'play', 'progress', 'mute', 'volume', 'fullscreen'],
-      youtube: { noCookie: true, showinfo: 1, modestbranding: 0 },
-    })
-  })
-}
-initPlyr()
-
 // Data
 const photoCategories = [
   { name: 'architecture', entries: 19 },
@@ -68,11 +58,20 @@ const videoEntries = [
   },
 ]
 
-// Video
+// Videos
+function initPlyr() {
+  const players = Array.from(document.querySelectorAll('.player')).map((p) => {
+    new Plyr(p, {
+      controls: ['play-large', 'play', 'progress', 'mute', 'volume', 'fullscreen'],
+      youtube: { noCookie: true, showinfo: 1, modestbranding: 0 },
+    })
+  })
+}
+initPlyr()
 const suggestions = document.querySelector('.suggestions')
 
 videoEntries.forEach((video) => {
-  const videoThumbnail = suggestions.appendChild(document.createElement('img'))
+  const videoThumbnail = document.createElement('img')
   videoThumbnail.src = `./img/thumbnails/${video.thumbnail}`
   videoThumbnail.addEventListener('click', () => {
     const player = document.querySelector('.plyr')
@@ -82,20 +81,33 @@ videoEntries.forEach((video) => {
     setTimeout(() => {
       player.remove()
       playerInfos.remove()
+
       const playerDiv = document.querySelector('.playerDiv')
-      const playerNew = playerDiv.appendChild(document.createElement('div'))
+
+      const playerNew = document.createElement('div')
       playerNew.classList.add('player')
       playerNew.setAttribute('data-plyr-provider', `${video.platform}`)
       playerNew.setAttribute('data-plyr-embed-id', `${video.id}`)
       playerNew.setAttribute('data-poster', `./img/thumbnails/${video.thumbnail}`)
-      const playerInfosNew = playerDiv.appendChild(document.createElement('div'))
+      playerDiv.appendChild(playerNew)
+
+      const playerInfosNew = document.createElement('div')
       playerInfosNew.classList.add('playerInfos')
-      const playerInfosh1 = playerInfosNew.appendChild(document.createElement('h1'))
+
+      const playerInfosh1 = document.createElement('h1')
       playerInfosh1.innerText = video.name
-      const playerInfosh3 = playerInfosNew.appendChild(document.createElement('h3'))
+      playerInfosNew.appendChild(playerInfosh1)
+
+      const playerInfosh3 = document.createElement('h3')
       playerInfosh3.innerText = `Rôle: ${video.role}`
-      const playerInfosDesc1 = playerInfosNew.appendChild(document.createElement('p'))
+      playerInfosNew.appendChild(playerInfosh3)
+
+      const playerInfosDesc1 = document.createElement('p')
       playerInfosDesc1.innerText = video.desc1
+      playerInfosNew.appendChild(playerInfosDesc1)
+
+      playerDiv.appendChild(playerInfosNew)
+
       initPlyr()
       const plyr = document.querySelector('.plyr')
       toggleElements(plyr, 'hidden')
@@ -104,6 +116,7 @@ videoEntries.forEach((video) => {
       toggleElements(playerInfosNew, 'hidden', 500)
     }, 500)
   })
+  suggestions.appendChild(videoThumbnail)
 })
 
 // Photography
@@ -182,10 +195,6 @@ function initSwiper(swiperDiv) {
     slidesPerView: 'auto',
     centeredSlides: true,
     grabCursor: true,
-    mousewheel: {
-      forceToAxis: false,
-    },
-    preventInteractionOnTransition: true,
     freeMode: {
       enabled: true,
       sticky: true,
