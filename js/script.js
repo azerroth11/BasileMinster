@@ -182,6 +182,10 @@ function initSwiper(swiperDiv) {
     slidesPerView: 'auto',
     centeredSlides: true,
     grabCursor: true,
+    mousewheel: {
+      forceToAxis: false,
+    },
+    preventInteractionOnTransition: true,
     freeMode: {
       enabled: true,
       sticky: true,
