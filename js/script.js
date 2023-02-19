@@ -30,7 +30,7 @@ const videoEntries = [
     thumbnail: 'Vadim Vernay - How.webp',
   },
   {
-    name: 'Animal Pepper ► "Thérèse" • Live Session',
+    name: 'Animal Pepper "Thérèse" • Live Session',
     role: 'Réalisateur',
     desc1:
       'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laborum porro ipsum dolor sit amet consectetur, adipisicing elit consectetur praesentium nemo magni blanditiis illo ipsum id assumenda molestias?',
