@@ -3,11 +3,10 @@ const photoCategories = [
   { name: 'architecture', entries: 19 },
   { name: 'art', entries: 5 },
   { name: 'city', entries: 8 },
-  { name: 'montagnes', entries: 24 },
+  { name: 'montagnes', entries: 25 },
   { name: 'musique', entries: 4 },
-  { name: 'nature', entries: 12 },
-  { name: 'people', entries: 15 },
-  { name: 'road', entries: 14 },
+  { name: 'nature', entries: 14 },
+  { name: 'voyages', entries: 30 },
 ]
 
 const videoEntries = [
@@ -30,7 +29,7 @@ const videoEntries = [
     thumbnail: 'Vadim Vernay - How.webp',
   },
   {
-    name: 'Animal Pepper "Thérèse" • Live Session',
+    name: 'Animal Pepper "Thérèse"',
     role: 'Réalisateur',
     desc1:
       'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laborum porro ipsum dolor sit amet consectetur, adipisicing elit consectetur praesentium nemo magni blanditiis illo ipsum id assumenda molestias?',
@@ -53,7 +52,7 @@ const videoEntries = [
     desc1:
       'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laborum porro ipsum dolor sit amet consectetur, adipisicing elit consectetur praesentium nemo magni blanditiis illo ipsum id assumenda molestias?',
     platform: 'vimeo',
-    id: '665658821/d8e268c184',
+    id: '665658821',
     thumbnail: 'Art en Devanture.webp',
   },
 ]
@@ -69,11 +68,22 @@ function initPlyr() {
 }
 initPlyr()
 const suggestions = document.querySelector('.suggestions')
+const thumbnailArray = []
 
 videoEntries.forEach((video) => {
   const videoThumbnail = document.createElement('img')
   videoThumbnail.src = `./img/thumbnails/${video.thumbnail}`
+  videoThumbnail.classList.add('thumbnail')
+  thumbnailArray.push(videoThumbnail)
+  if (video.name == "Portraits d'artistes: Stéphanie Ledoux") {
+    videoThumbnail.classList.add('selected')
+  }
   videoThumbnail.addEventListener('click', () => {
+    thumbnailArray.forEach((i) => {
+      i.classList.remove('selected')
+    })
+    videoThumbnail.classList.add('selected')
+
     const player = document.querySelector('.plyr')
     const playerInfos = document.querySelector('.playerInfos')
     toggleElements(player, 'hidden')
@@ -95,15 +105,15 @@ videoEntries.forEach((video) => {
       playerInfosNew.classList.add('playerInfos')
 
       const playerInfosh1 = document.createElement('h1')
-      playerInfosh1.innerText = video.name
+      playerInfosh1.textContent = video.name
       playerInfosNew.appendChild(playerInfosh1)
 
       const playerInfosh3 = document.createElement('h3')
-      playerInfosh3.innerText = `Rôle: ${video.role}`
+      playerInfosh3.textContent = `Rôle: ${video.role}`
       playerInfosNew.appendChild(playerInfosh3)
 
       const playerInfosDesc1 = document.createElement('p')
-      playerInfosDesc1.innerText = video.desc1
+      playerInfosDesc1.textContent = video.desc1
       playerInfosNew.appendChild(playerInfosDesc1)
 
       playerDiv.appendChild(playerInfosNew)
@@ -186,7 +196,7 @@ function populateSwiperWrapper(swiperDiv, category) {
     swiperSlide.classList.add('swiper-slide')
 
     const swiperIMG = swiperSlide.appendChild(document.createElement('img'))
-    swiperIMG.src = `./img/photography/${name}/${name}${i < 10 ? '0' : ''}${i}.webp`
+    swiperIMG.src = `./img/photography/${name}/${i < 10 ? '0' : ''}${i}.webp`
   }
 }
 

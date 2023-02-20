@@ -73,6 +73,11 @@ h6 {
   text-decoration: underline;
 }
 
+.selected {
+  border: 2px solid white;
+  transform: perspective(500px) translateZ(25px);
+}
+
 .section {
   min-height: 100vh;
   width: 100%;
@@ -148,6 +153,19 @@ header a {
   height: 90%;
   width: 100%;
   object-fit: cover;
+}
+
+#hero .heroOverlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: right;
+}
+
+#hero .heroOverlay h1 {
+  font-size: 4rem;
+  text-shadow: 0 0 5px rgb(13, 13, 13);
 }
 
 #hero .down {
@@ -320,7 +338,7 @@ header a {
 
 .swiper-slide-prev,
 .swiper-slide-next {
-  opacity: 0.25;
+  opacity: 0.1;
 }
 
 .swiper-button-prev {
@@ -472,6 +490,10 @@ footer {
     display: flex;
     gap: 1rem;
     margin-top: 0;
+  }
+
+  #hero .heroOverlay {
+    left: 35%;
   }
 
   #videos .videoGallery {
