@@ -133,18 +133,14 @@ header a {
   min-height: 0;
 }
 
-#hero .overlay {
+#hero::before {
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0) 0%,
-    rgba(0, 0, 0, 0) 65%,
-    rgba(19, 19, 19, 1) 90%
-  );
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 65%, rgba(19, 19, 19, 1) 90%);
 }
 
 #hero video,
@@ -165,6 +161,7 @@ header a {
   border: 2px solid white;
   border-radius: 50%;
   padding: 0.5rem;
+  z-index: 2;
 }
 
 /* Videos */
@@ -317,7 +314,7 @@ header a {
 }
 
 .swiper-slide img {
-  height: 100vh;
+  height: 100svh;
   margin: auto 0;
 }
 
@@ -379,12 +376,40 @@ header a {
   padding: 0 1rem;
 }
 
-#contact h1 {
+#contact .contactTop {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#contact .contactTop .portraitIMG {
+  position: relative;
+  max-width: 50%;
+  margin: 0 auto 2rem auto;
+}
+
+#contact .contactTop .portraitIMG::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(0, 0, 0, 0) 50%, rgba(19, 19, 19, 1) 75%);
+}
+
+#contact .contactTop .contactRight {
+  display: grid;
+  place-items: center;
+  margin: auto 0;
+  gap: 2rem;
+}
+
+#contact .contactTop .contactRight h2 {
   max-width: 30ch;
   text-align: center;
 }
 
-#contact > a:first-of-type {
+#contact .contactTop a:first-of-type {
   font-weight: bold;
   padding: 1rem 1.5rem;
   border: 1px solid white;
@@ -395,7 +420,7 @@ header a {
   transition: all 0.5s;
 }
 
-#contact > a:hover {
+#contact .contactTop a:hover {
   border: 1px solid #131313;
   color: #131313;
   background-color: white;
