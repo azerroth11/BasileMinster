@@ -129,7 +129,8 @@ header a {
   position: relative;
   width: 100vw;
   max-width: none;
-  height: 100vh;
+  height: 100svh;
+  min-height: 0;
 }
 
 #hero .overlay {
@@ -205,6 +206,10 @@ header a {
 
 #videos .videoGallery .playerInfos h1 {
   line-height: 2rem;
+}
+
+#videos .videoGallery .playerInfos h3 {
+  margin-top: 0.5rem;
 }
 
 #videos .videoGallery .playerInfos p {
@@ -288,7 +293,7 @@ header a {
 #photography svg {
   position: absolute;
   top: 6rem;
-  right: 2rem;
+  right: 20px;
   height: 28px;
   width: 28px;
   z-index: 5;
@@ -321,9 +326,22 @@ header a {
   opacity: 0.25;
 }
 
+.swiper-button-prev {
+  left: 20px;
+}
+
+.swiper-button-next {
+  right: 20px;
+}
+
 .swiper-button-prev.swiper-button-disabled,
 .swiper-button-next.swiper-button-disabled {
   opacity: 0;
+}
+
+.swiper-pagination > .swiper-pagination-clickable,
+.swiper-pagination-bullets.swiper-pagination-horizontal {
+  bottom: 20px;
 }
 
 .swiper-pagination-bullet {
@@ -456,10 +474,6 @@ footer {
 
   #videos .videoGallery .playerInfos h1 {
     line-height: inherit;
-  }
-
-  #videos .videoGallery .playerInfos h3 {
-    margin-top: 0.5rem;
   }
 
   #videos .videoGallery .playerInfos p {
