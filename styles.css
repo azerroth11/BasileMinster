@@ -1,4 +1,4 @@
-@font-face {
+/* @font-face {
   font-family: Playfair Display;
   src: url(./PlayfairDisplay-VariableFont_wght.ttf);
 }
@@ -6,6 +6,18 @@
 @font-face {
   font-family: Jakarta;
   src: url(./PlusJakartaSans-VariableFont_wght.ttf);
+} */
+
+@font-face {
+  font-family: 'Reckless Neue';
+  src: url(./RecklessNeue-Book.ttf) format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NeueHaasGrotesk-Roman';
+  src: url(./PragmaticaMedium.otf);
 }
 
 :root {
@@ -32,18 +44,13 @@ body {
   position: relative;
   background-color: #131313;
   color: #fff;
-  font-family: Jakarta;
+  font-family: 'Reckless Neue';
 }
 
 /* Commons */
 a {
   text-decoration: none;
   color: inherit;
-}
-
-p,
-i {
-  max-width: 50ch;
 }
 
 ul {
@@ -61,7 +68,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Playfair Display';
+  font-family: 'NeueHaasGrotesk-Roman', 'Helvetica', 'Arial', sans-serif;
 }
 
 .hidden {
@@ -75,7 +82,8 @@ h6 {
 
 .selected {
   border: 2px solid white;
-  transform: perspective(500px) translateZ(25px);
+  transform: perspective(500px) translateZ(20px);
+  filter: grayscale(1);
 }
 
 .section {
@@ -134,7 +142,7 @@ header a {
   position: relative;
   width: 100vw;
   max-width: none;
-  height: 95vh;
+  height: 100vh;
   min-height: 0;
 }
 
@@ -164,8 +172,11 @@ header a {
 }
 
 #hero .heroOverlay h1 {
-  font-size: 4rem;
+  font-size: calc(50px + 1vw);
+  line-height: 0.85;
+  letter-spacing: -0.05em;
   text-shadow: 0 0 5px rgb(13, 13, 13);
+  padding-bottom: 1rem;
 }
 
 #hero .down {
@@ -215,7 +226,7 @@ header a {
 
 #videos .videoGallery .playerInfos {
   display: grid;
-  margin: auto 0;
+  margin: 1rem 0;
   padding: 1rem 0;
 }
 
@@ -229,6 +240,8 @@ header a {
 
 #videos .videoGallery .playerInfos p {
   margin-top: 0.5rem;
+  overflow: hidden;
+  max-height: 15vh;
 }
 
 #videos .videoGallery .suggestions {
@@ -236,11 +249,12 @@ header a {
   flex-wrap: wrap;
   gap: 0.5rem;
   width: 100%;
+  max-height: 80vh;
 }
 
 #videos .videoGallery .suggestions img {
   object-fit: cover;
-  transition: transform 0.5s;
+  transition: all 0.25s;
   width: 100%;
   min-width: 150px;
   max-width: 45%;
@@ -253,7 +267,7 @@ header a {
 
 #videos .videoGallery .suggestions img:hover {
   cursor: pointer;
-  transform: perspective(500px) translateZ(25px);
+  transform: perspective(500px) translateZ(20px);
 }
 
 /* Gallery */
@@ -498,6 +512,7 @@ footer {
 
   #videos .videoGallery {
     max-width: min(75%, 1271px);
+    max-height: 80vh;
   }
 
   #videos .videoGallery .playerDiv {
@@ -509,6 +524,7 @@ footer {
     flex-wrap: wrap;
     gap: 0.5rem;
     width: 22.5%;
+    height: 100%;
   }
 
   #videos .videoGallery .suggestions img {
