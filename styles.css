@@ -32,7 +32,7 @@
 }
 
 html {
-  scroll-snap-type: y mandatory;
+  /* scroll-snap-type: y proximity; */
   scroll-behavior: smooth;
 }
 
@@ -168,15 +168,36 @@ header a {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  text-align: right;
 }
 
 #hero .heroOverlay h1 {
   font-size: calc(50px + 1vw);
-  line-height: 0.85;
   letter-spacing: -0.05em;
   text-shadow: 0 0 5px rgb(13, 13, 13);
-  padding-bottom: 1rem;
+  white-space: nowrap;
+  border-right: 0.1em solid white;
+  padding-right: 0.5rem;
+  line-height: 1;
+  animation: typewriter 2s steps(30, end), blink-caret 0.5s step-end infinite;
+}
+
+@keyframes typewriter {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: white;
+  }
 }
 
 #hero .down {
@@ -387,16 +408,17 @@ header a {
   max-width: 1200px;
 }
 
+#about img {
+  max-width: min(450px, 100%);
+  margin: 0 auto;
+}
+
 #about div {
   display: grid;
   gap: 1rem;
   place-self: center;
   margin: 0 auto;
-}
-
-#about img {
-  max-width: min(375px, 100%);
-  margin: 0 auto;
+  max-width: 50ch;
 }
 
 /* Contact */
@@ -450,6 +472,7 @@ header a {
   text-transform: uppercase;
   box-shadow: 0 0 10px -2px rgba(255, 255, 255, 0.4);
   transition: all 0.5s;
+  margin-bottom: 1rem;
 }
 
 #contact .contactTop a:hover {
@@ -462,6 +485,7 @@ header a {
   display: flex;
   justify-content: space-between;
   margin: 2rem 0.5rem;
+  min-width: 300px;
 }
 
 #contact .logos svg {
@@ -504,10 +528,6 @@ footer {
     display: flex;
     gap: 1rem;
     margin-top: 0;
-  }
-
-  #hero .heroOverlay {
-    left: 35%;
   }
 
   #videos .videoGallery {

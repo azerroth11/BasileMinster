@@ -69,7 +69,6 @@ const videoEntries = [
 ]
 
 // Videos
-
 function playerInit(video) {
   const playerDiv = document.querySelector('.playerDiv')
   const player = playerDiv.appendChild(document.createElement('div'))
@@ -101,7 +100,6 @@ function playerInit(video) {
     playerDesc.innerText = videoEntries[0].desc
   }
 }
-
 playerInit()
 
 function initPlyr() {
@@ -113,8 +111,8 @@ function initPlyr() {
   })
 }
 initPlyr()
-const thumbnailArray = []
 
+const thumbnailArray = []
 videoEntries.forEach((video) => {
   const videoThumbnail = document.createElement('img')
   videoThumbnail.src = `./img/thumbnails/${video.thumbnail}`
@@ -324,3 +322,36 @@ window.addEventListener('scroll', () => {
     observerContact.classList.remove('active')
   }
 })
+
+// Typewriter effect
+const h1Parent = document.querySelector('.heroOverlay')
+const typewriter = h1Parent.appendChild(document.createElement('h1'))
+
+const messages = ['ÉCRITURE', 'CONCEPTION', 'RÉALISATION'] // an array of messages to animate
+
+let messageIndex = 0
+let charIndex = 0
+let isErasing = false
+
+function typeWriter() {
+  const currentMessage = messages[messageIndex]
+  if (isErasing) {
+    typewriter.innerHTML = currentMessage.substring(0, charIndex - 1)
+    charIndex--
+    if (charIndex === 0) {
+      isErasing = false
+      messageIndex = (messageIndex + 1) % messages.length
+    }
+  } else {
+    typewriter.innerHTML = currentMessage.substring(0, charIndex + 1)
+    charIndex++
+    if (charIndex === currentMessage.length) {
+      isErasing = true
+      setTimeout(typeWriter, 2000)
+      return
+    }
+  }
+  setTimeout(typeWriter, 150) // wait for the delay and call the function again
+}
+
+typeWriter() // start the animation
