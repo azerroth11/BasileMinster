@@ -225,6 +225,9 @@ function initSwiper(swiperDiv) {
       enabled: true,
       sticky: true,
     },
+    keyboard: {
+      enabled: true,
+    },
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
@@ -296,7 +299,7 @@ function typeWriter() {
     if (charIndex === 0) {
       isErasing = false
       messageIndex = (messageIndex + 1) % messages.length
-      setTimeout(typeWriter, 500) // wait for 1 second before typing the next message
+      setTimeout(typeWriter, 500) // wait for x milliseconds before typing the next message
       return
     }
   } else {
@@ -304,7 +307,7 @@ function typeWriter() {
     charIndex++
     if (charIndex === currentMessage.length) {
       isErasing = true
-      setTimeout(typeWriter, 1000) // wait for 1 second before starting to erase
+      setTimeout(typeWriter, 1000) // wait for x milliseconds before starting to erase
       return
     }
   }
