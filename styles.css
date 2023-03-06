@@ -59,7 +59,7 @@ img {
 }
 
 .section {
-  min-height: 100dvh;
+  min-height: 99vh;
   width: 100%;
   position: relative;
   scroll-snap-align: start;
