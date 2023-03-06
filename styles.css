@@ -59,7 +59,9 @@ img {
 }
 
 .section {
-  min-height: 100svh;
+  min-height: 100vh;
+  min-height: -moz-available;
+  min-height: -webkit-fill-available;
   width: 100%;
   position: relative;
   scroll-snap-align: start;
@@ -118,7 +120,9 @@ header a {
   position: relative;
   width: 100vw;
   max-width: none;
-  height: 100svh;
+  height: 100vh;
+  height: -moz-available;
+  height: -webkit-fill-available;
   min-height: 0;
 }
 
@@ -339,7 +343,9 @@ header a {
 }
 
 .swiper-slide img {
-  height: 100svh;
+  height: 100vh;
+  height: -moz-available;
+  height: -webkit-fill-available;
   margin: auto 0;
 }
 
