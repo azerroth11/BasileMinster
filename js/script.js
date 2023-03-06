@@ -53,7 +53,7 @@ const videoEntries = [
   // {
   //   name: 'HABITER LE MOUVEMENT // Film 70"',
   //   role: 'Réalisateur',
-  //   desc: "Ce projet est mon premier long métrage documentaire ; il est né de la rencontre entre une association d'architectes qui travaillent sur l'aspect social de l'architecture. Après 2 mois passés en Afrique du Sud dans un quartier informel de port Elizabeth, ce film raconte les lignes de vie des habitants ainsi que l'histoire du quartier qui s'est construit sur les passés individuels de chacun de ceux qui l'habitent. ",
+  //   desc: "Ce projet est mon premier long métrage documentaire ; il est né de ma rencontre avec une association d’architectes qui travaillent sur l’aspect social de l’architecture. Après 2 mois passés en Afrique du Sud dans un quartier informel de port Elizabeth, ce film raconte les lignes de vie des habitants ainsi que l'histoire du quartier qui s'est construit sur les passés individuels de chacun de ceux qui l'habitent. ",
   //   platform: 'vimeo',
   //   id: '562831822',
   //   thumbnail: 'Habiter Le Mouvement.webp',
@@ -277,81 +277,38 @@ function closeBTN(target) {
 
 createGallery()
 
-// Links underline
-const observerVideos = document.getElementById('observerVideos')
-const observerPhotos = document.getElementById('observerPhotos')
-const observerAbout = document.getElementById('observerAbout')
-const observerContact = document.getElementById('observerContact')
-
-function isElementInViewport(el) {
-  const rect = el.getBoundingClientRect()
-  const windowHeight = window.innerHeight || document.documentElement.clientHeight
-  const windowWidth = window.innerWidth || document.documentElement.clientWidth
-
-  // Check if the element is at least 25% visible in the viewport
-  return (
-    rect.top >= -rect.height / 4 &&
-    rect.left >= 0 &&
-    rect.bottom <= windowHeight + rect.height / 4 &&
-    rect.right <= windowWidth
-  )
-}
-
-window.addEventListener('scroll', () => {
-  if (isElementInViewport(document.getElementById('videos'))) {
-    observerVideos.classList.add('active')
-  } else {
-    observerVideos.classList.remove('active')
-  }
-
-  if (isElementInViewport(document.getElementById('photography'))) {
-    observerPhotos.classList.add('active')
-  } else {
-    observerPhotos.classList.remove('active')
-  }
-
-  if (isElementInViewport(document.getElementById('about'))) {
-    observerAbout.classList.add('active')
-  } else {
-    observerAbout.classList.remove('active')
-  }
-
-  if (isElementInViewport(document.getElementById('contact'))) {
-    observerContact.classList.add('active')
-  } else {
-    observerContact.classList.remove('active')
-  }
-})
-
 // Typewriter effect
 const h1Parent = document.querySelector('.heroOverlay')
 const typewriter = h1Parent.appendChild(document.createElement('h1'))
 
-const messages = ['ÉCRITURE', 'CONCEPTION', 'RÉALISATION'] // an array of messages to animate
+const messages = ['ÉCRITURE', 'CONCEPTION', 'RÉALISATION']
 
 let messageIndex = 0
 let charIndex = 0
 let isErasing = false
+let eraseSpeed = 50
 
 function typeWriter() {
   const currentMessage = messages[messageIndex]
   if (isErasing) {
-    typewriter.innerHTML = currentMessage.substring(0, charIndex - 1)
+    typewriter.textContent = currentMessage.substring(0, charIndex - 1)
     charIndex--
     if (charIndex === 0) {
       isErasing = false
       messageIndex = (messageIndex + 1) % messages.length
+      setTimeout(typeWriter, 500) // wait for 1 second before typing the next message
+      return
     }
   } else {
-    typewriter.innerHTML = currentMessage.substring(0, charIndex + 1)
+    typewriter.textContent = currentMessage.substring(0, charIndex + 1)
     charIndex++
     if (charIndex === currentMessage.length) {
       isErasing = true
-      setTimeout(typeWriter, 2000)
+      setTimeout(typeWriter, 1000) // wait for 1 second before starting to erase
       return
     }
   }
-  setTimeout(typeWriter, 150) // wait for the delay and call the function again
+  setTimeout(typeWriter, isErasing ? eraseSpeed : 150) // wait for the delay and call the function again
 }
 
-typeWriter() // start the animation
+typeWriter()

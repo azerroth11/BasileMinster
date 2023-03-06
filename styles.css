@@ -15,11 +15,6 @@
   font-style: normal;
 }
 
-@font-face {
-  font-family: 'NeueHaasGrotesk-Roman';
-  src: url(./PragmaticaMedium.otf);
-}
-
 :root {
   --plyr-color-main: rgba(255, 255, 255, 0.5);
   --swiper-theme-color: #fff;
@@ -32,7 +27,7 @@
 }
 
 html {
-  /* scroll-snap-type: y proximity; */
+  scroll-snap-type: y proximity;
   scroll-behavior: smooth;
 }
 
@@ -62,22 +57,9 @@ img {
   object-fit: contain;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: 'NeueHaasGrotesk-Roman', 'Helvetica', 'Arial', sans-serif;
-}
-
 .hidden {
   opacity: 0;
   pointer-events: none;
-}
-
-.active {
-  text-decoration: underline;
 }
 
 .selected {
@@ -87,7 +69,7 @@ h6 {
 }
 
 .section {
-  min-height: 100vh;
+  min-height: 100svh;
   width: 100%;
   position: relative;
   scroll-snap-align: start;
@@ -111,6 +93,10 @@ header {
 
 header a {
   display: grid;
+}
+
+header a:hover {
+  text-decoration: underline;
 }
 
 header a span {
@@ -142,7 +128,7 @@ header a {
   position: relative;
   width: 100vw;
   max-width: none;
-  height: 100vh;
+  height: 100svh;
   min-height: 0;
 }
 
@@ -298,23 +284,18 @@ header a {
 }
 
 #photography .photoGallery {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
   gap: 0.5rem;
   transition: opacity 0.5s;
+  width: fit-content;
 }
 
 #photography .photoGallery div {
-  width: 100vmin;
-  height: 20vmin;
+  width: min(100vmin, 500px);
+  height: min(30vmin, calc(100svh / 8));
   position: relative;
   box-shadow: 0 2px 8px -2px hsla(0, 0%, 5%, 1);
   transition: transform 0.5s;
-}
-
-#photography .photoGallery div:hover {
-  transform: perspective(500px) translateZ(50px);
-  z-index: 3;
 }
 
 #photography .photoGallery img {
@@ -338,6 +319,7 @@ header a {
   text-transform: capitalize;
   font-size: 2rem;
   pointer-events: none;
+  text-shadow: 0 0 5px rgb(13, 13, 13);
 }
 
 #photography svg {
@@ -400,20 +382,14 @@ header a {
 
 /* About Page */
 #about {
-  margin: 4rem auto;
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
   padding: 0 1rem;
-  max-width: 1200px;
+  max-width: min(1200px, 100vw);
 }
 
-#about img {
-  max-width: min(450px, 100%);
-  margin: 0 auto;
-}
-
-#about div {
+#about > div:first-of-type {
   display: grid;
   gap: 1rem;
   place-self: center;
@@ -421,84 +397,84 @@ header a {
   max-width: 50ch;
 }
 
-/* Contact */
-#contact {
-  height: 90vh;
-  min-height: 0;
-  display: grid;
-  place-items: center;
-  padding: 0 1rem;
-}
-
-#contact .contactTop {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-#contact .contactTop .portraitIMG {
+#about img {
+  display: none;
+  max-width: min(450px, 100%);
+  max-height: 40%;
+  margin: auto;
+  /* filter: grayscale(1); */
   position: relative;
-  max-width: 50%;
-  margin: 0 auto 2rem auto;
 }
 
-#contact .contactTop .portraitIMG::before {
+#about img::before {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: radial-gradient(circle, rgba(0, 0, 0, 0) 50%, rgba(19, 19, 19, 1) 75%);
+  background: linear-gradient(
+    180deg,
+    rgba(19, 19, 19, 0) 0%,
+    rgba(19, 19, 19, 0) 75%,
+    rgba(19, 19, 19, 1) 95%
+  );
 }
 
-#contact .contactTop .contactRight {
+/* Contact */
+.contact {
   display: grid;
   place-items: center;
   margin: auto 0;
   gap: 2rem;
+  width: 100vw;
 }
 
-#contact .contactTop .contactRight h2 {
+.contact h2 {
   max-width: 30ch;
   text-align: center;
 }
 
-#contact .contactTop a:first-of-type {
+.contact a:first-of-type {
   font-weight: bold;
   padding: 1rem 1.5rem;
   border: 1px solid white;
   border-radius: 5px;
-  background-color: navy;
+  background-color: #a54a4a;
   text-transform: uppercase;
   box-shadow: 0 0 10px -2px rgba(255, 255, 255, 0.4);
   transition: all 0.5s;
   margin-bottom: 1rem;
 }
 
-#contact .contactTop a:hover {
+.contact a:hover {
   border: 1px solid #131313;
   color: #131313;
   background-color: white;
 }
 
-#contact .logos {
+.socialLinks {
   display: flex;
   justify-content: space-between;
-  margin: 2rem 0.5rem;
   min-width: 300px;
+  width: 100%;
+  max-width: 350px;
+  height: 50px;
+  margin: 0 auto;
 }
 
-#contact .logos svg {
+.socialLinks svg {
   fill: white;
   border-radius: 5px;
 }
 
-#contact .logos svg:hover {
+.socialLinks svg:hover {
   cursor: pointer;
 }
 
 /* Footer */
 footer {
+  width: 100vw;
   display: grid;
   place-items: center;
   margin-bottom: 0.5rem;
@@ -536,14 +512,14 @@ footer {
   }
 
   #videos .videoGallery .playerDiv {
-    max-width: 75%;
+    max-width: 72.5%;
   }
 
   #videos .videoGallery .suggestions {
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
-    width: 22.5%;
+    max-width: 22.5%;
     height: 100%;
   }
 
@@ -565,11 +541,6 @@ footer {
 }
 
 @media only screen and (min-width: 1200px) {
-  header {
-    position: fixed;
-    top: 0;
-  }
-
   header a p:last-of-type {
     font-size: 1.25rem;
   }
@@ -590,8 +561,17 @@ footer {
     position: relative;
   }
 
+  #photography .photoGallery div:hover {
+    transform: perspective(500px) translateZ(50px);
+    z-index: 3;
+  }
+
   #photography .photoGallery div p {
     transform: translate(-50%, -50%) rotate(-90deg);
-    font-size: 2rem;
+    font-size: 3rem;
+  }
+
+  #about img {
+    display: block;
   }
 }
