@@ -386,6 +386,10 @@ header a {
   max-width: 50ch;
 }
 
+#about > div h1 {
+  color: hsl(0, 38%, 55%);
+}
+
 #about img {
   display: none;
   max-width: min(450px, 100%);
@@ -427,17 +431,15 @@ header a {
 .contact a:first-of-type {
   font-weight: bold;
   padding: 1rem 1.5rem;
-  border: 1px solid white;
   border-radius: 5px;
   background-color: #a54a4a;
   text-transform: uppercase;
-  box-shadow: 0 0 10px -2px rgba(255, 255, 255, 0.4);
+  /* box-shadow: 0 0 10px -2px rgba(255, 255, 255, 0.4); */
   transition: all 0.5s;
   margin-bottom: 1rem;
 }
 
 .contact a:hover {
-  border: 1px solid #131313;
   color: #131313;
   background-color: white;
 }
