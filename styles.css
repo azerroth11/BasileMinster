@@ -122,7 +122,6 @@ header a {
   max-width: none;
   height: 100vh;
   height: 100svh;
-  /* height: -webkit-fill-available; */
   min-height: 0;
 }
 
@@ -481,10 +480,6 @@ footer {
 }
 
 @media screen and (orientation: landscape) and (max-device-width: 950px) {
-  #videos {
-    overflow-y: hidden;
-  }
-
   #videos .videoGallery {
     max-width: 98%;
   }
@@ -499,6 +494,10 @@ footer {
 
   #videos .suggestions {
     max-width: 20%;
+  }
+
+  #videos .videoGallery .suggestions img:last-of-type {
+    display: none !important;
   }
 
   #photography .photoGallery {
