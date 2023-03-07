@@ -19,7 +19,7 @@
 }
 
 html {
-  /* scroll-snap-type: y proximity; */
+  scroll-snap-type: y proximity;
   scroll-behavior: smooth;
 }
 
@@ -543,6 +543,10 @@ footer {
 }
 
 @media only screen and (min-width: 1200px) {
+  html {
+    scroll-snap-type: none;
+  }
+
   #hero {
     height: 100vh;
   }
