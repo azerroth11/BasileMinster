@@ -61,7 +61,8 @@ img {
 }
 
 .section {
-  min-height: 99vh;
+  min-height: 100vh;
+  min-height: 100svh;
   width: 100%;
   position: relative;
   scroll-snap-align: start;
@@ -119,6 +120,7 @@ header a {
 #hero {
   position: relative;
   max-width: none;
+  height: 100vh;
   height: 100dvh;
   /* height: -webkit-fill-available; */
   min-height: 0;
