@@ -480,6 +480,43 @@ footer {
   text-align: center;
 }
 
+@media screen and (orientation: landscape) and (max-device-width: 950px) {
+  #videos {
+    overflow-y: hidden;
+  }
+
+  #videos .videoGallery {
+    max-width: 98%;
+  }
+
+  #videos .playerDiv {
+    max-width: 75%;
+  }
+
+  #videos .playerDiv .playerInfos p {
+    display: none;
+  }
+
+  #videos .suggestions {
+    max-width: 20%;
+  }
+
+  #photography .photoGallery {
+    max-width: 99%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  #photography .photoGallery div {
+    max-width: 45%;
+  }
+
+  #photography .photoGallery > div:nth-child(5) {
+    display: none;
+  }
+}
+
 @media only screen and (min-width: 768px) {
   header > div {
     display: flex;
@@ -564,6 +601,7 @@ footer {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    gap: 2rem;
   }
 
   #photography .photoGallery > div:nth-child(5) {
