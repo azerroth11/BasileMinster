@@ -8,6 +8,8 @@
 :root {
   --plyr-color-main: rgba(255, 255, 255, 0.5);
   --swiper-theme-color: #fff;
+  --accent: #354888;
+  --accent-light: hsl(226, 44%, 60%);
 }
 
 * {
@@ -17,7 +19,7 @@
 }
 
 html {
-  scroll-snap-type: y proximity;
+  /* scroll-snap-type: y proximity; */
   scroll-behavior: smooth;
 }
 
@@ -308,7 +310,7 @@ header a {
   text-transform: capitalize;
   font-size: 2rem;
   pointer-events: none;
-  text-shadow: 0 0 5px rgb(13, 13, 13);
+  text-shadow: 0 0 10px rgb(13, 13, 13);
 }
 
 #photography svg {
@@ -387,7 +389,7 @@ header a {
 }
 
 #about > div h1 {
-  color: hsl(0, 38%, 55%);
+  color: var(--accent-light);
 }
 
 #about img {
@@ -432,9 +434,8 @@ header a {
   font-weight: bold;
   padding: 1rem 1.5rem;
   border-radius: 5px;
-  background-color: #a54a4a;
+  background-color: var(--accent);
   text-transform: uppercase;
-  /* box-shadow: 0 0 10px -2px rgba(255, 255, 255, 0.4); */
   transition: all 0.5s;
   margin-bottom: 1rem;
 }
@@ -497,6 +498,10 @@ footer {
     margin-top: 0;
   }
 
+  #hero .heroOverlay {
+    transform: translate(-100%, -50%);
+  }
+
   #videos .videoGallery {
     max-width: min(75%, 1271px);
     max-height: 80vh;
@@ -545,15 +550,14 @@ footer {
   }
 
   #photography .photoGallery {
+    max-width: 1200px;
     display: flex;
-    flex-wrap: nowrap;
-    gap: 0.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
-  #photography .photoGallery div {
-    width: 15vmin;
-    height: 50vmin;
-    position: relative;
+  #photography .photoGallery > div:nth-child(5) {
+    display: none;
   }
 
   #photography .photoGallery div:hover {
@@ -562,7 +566,7 @@ footer {
   }
 
   #photography .photoGallery div p {
-    transform: translate(-50%, -50%) rotate(-90deg);
+    transform: translate(-50%, -50%);
     font-size: 3rem;
   }
 

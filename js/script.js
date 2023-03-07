@@ -299,7 +299,7 @@ function typeWriter() {
     if (charIndex === 0) {
       isErasing = false
       messageIndex = (messageIndex + 1) % messages.length
-      setTimeout(typeWriter, 500) // wait for x milliseconds before typing the next message
+      setTimeout(typeWriter, 250) // wait for x milliseconds before typing the next message
       return
     }
   } else {
@@ -307,7 +307,7 @@ function typeWriter() {
     charIndex++
     if (charIndex === currentMessage.length) {
       isErasing = true
-      setTimeout(typeWriter, 1000) // wait for x milliseconds before starting to erase
+      setTimeout(typeWriter, 500) // wait for x milliseconds before starting to erase
       return
     }
   }
