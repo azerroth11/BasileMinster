@@ -121,7 +121,7 @@ header a {
   position: relative;
   max-width: none;
   height: 100vh;
-  height: 100dvh;
+  height: 100svh;
   /* height: -webkit-fill-available; */
   min-height: 0;
 }
