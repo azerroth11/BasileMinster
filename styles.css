@@ -24,7 +24,6 @@ html {
 }
 
 body {
-  min-height: 100vh;
   display: grid;
   place-items: center;
   margin: 0 auto;
@@ -62,7 +61,8 @@ img {
 
 .section {
   min-height: 100vh;
-  min-height: 100svh;
+  min-height: 100dvh;
+  /* min-height: 100svh; */
   width: 100%;
   position: relative;
   scroll-snap-align: start;
@@ -123,6 +123,7 @@ header a {
   height: 100vh;
   height: 100svh;
   min-height: 0;
+  scroll-snap-align: none;
 }
 
 #hero::before {
@@ -479,43 +480,6 @@ footer {
   text-align: center;
 }
 
-@media screen and (orientation: landscape) and (max-device-width: 950px) {
-  #videos .videoGallery {
-    max-width: 98%;
-  }
-
-  #videos .playerDiv {
-    max-width: 75%;
-  }
-
-  #videos .playerDiv .playerInfos p {
-    display: none;
-  }
-
-  #videos .suggestions {
-    max-width: 20%;
-  }
-
-  #videos .videoGallery .suggestions img:last-of-type {
-    display: none !important;
-  }
-
-  #photography .photoGallery {
-    max-width: 99%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  #photography .photoGallery div {
-    max-width: 45%;
-  }
-
-  #photography .photoGallery > div:nth-child(5) {
-    display: none;
-  }
-}
-
 @media only screen and (min-width: 768px) {
   header > div {
     display: flex;
@@ -619,5 +583,42 @@ footer {
 
   #about img {
     display: block;
+  }
+}
+
+@media screen and (orientation: landscape) and (max-device-width: 950px) {
+  #videos .videoGallery {
+    max-width: 98%;
+  }
+
+  #videos .playerDiv {
+    max-width: 75%;
+  }
+
+  #videos .playerDiv .playerInfos p {
+    display: none;
+  }
+
+  #videos .suggestions {
+    max-width: 20%;
+  }
+
+  #videos .videoGallery .suggestions img:last-of-type {
+    display: none;
+  }
+
+  #photography .photoGallery {
+    max-width: 99%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  #photography .photoGallery div {
+    max-width: 45%;
+  }
+
+  #photography .photoGallery > div:nth-child(5) {
+    display: none;
   }
 }
